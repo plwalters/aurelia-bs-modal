@@ -1,5 +1,7 @@
-define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
+define(['exports', 'aurelia-framework', 'jquery'], function (exports, _aureliaFramework, _jquery) {
   'use strict';
+
+  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj['default'] : obj; };
 
   var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
 
@@ -8,6 +10,8 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
   Object.defineProperty(exports, '__esModule', {
     value: true
   });
+
+  var _$ = _interopRequire(_jquery);
 
   var Modal = (function () {
     function Modal(element) {
@@ -21,7 +25,7 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
     _createClass(_Modal, [{
       key: 'attached',
       value: function attached() {
-        this.modal.modal();
+        _$(this.modal).modal();
       }
     }]);
 

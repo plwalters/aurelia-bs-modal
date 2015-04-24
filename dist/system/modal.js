@@ -1,10 +1,12 @@
-System.register(['aurelia-framework'], function (_export) {
-  var inject, customElement, _classCallCheck, _createClass, Modal;
+System.register(['aurelia-framework', 'jquery'], function (_export) {
+  var inject, customElement, $, _classCallCheck, _createClass, Modal;
 
   return {
     setters: [function (_aureliaFramework) {
       inject = _aureliaFramework.inject;
       customElement = _aureliaFramework.customElement;
+    }, function (_jquery) {
+      $ = _jquery['default'];
     }],
     execute: function () {
       'use strict';
@@ -25,7 +27,7 @@ System.register(['aurelia-framework'], function (_export) {
         _createClass(_Modal, [{
           key: 'attached',
           value: function attached() {
-            this.modal.modal();
+            $(this.modal).modal();
           }
         }]);
 
