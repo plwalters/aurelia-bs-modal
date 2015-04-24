@@ -10,21 +10,24 @@
   ],
   "homepage": "http://aurelia.io",
   "bugs": {
-    "url": "https://github.com/pwkad/aurelia-modal/issues"
+    "url": "https://github.com/pwkad/aurelia-bs-modal/issues"
   },
   "license": "MIT",
   "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
   "main": "dist/commonjs/index.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/pwkad/aurelia-modal"
+    "url": "http://github.com/pwkad/aurelia-bs-modal"
   },
   "jspm": {
-    "directories": {},
+    "main": "index",
+    "format": "register",
+    "directories": {
+      "lib": "dist/system"
+    },
     "devDependencies": {
-      "babel": "npm:babel-core@^5.0.12",
-      "babel-runtime": "npm:babel-runtime@^5.0.12",
-      "core-js": "npm:core-js@^0.8.1"
+      "traceur": "jmcriffey/bower-traceur@0.0.87",
+      "traceur-runtime": "jmcriffey/bower-traceur-runtime@0.0.87"
     }
   }
 }
