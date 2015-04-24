@@ -16,6 +16,7 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
       _classCallCheck(this, ModalHeader);
 
       this.title = _instanceInitializers.title.call(this);
+      this.close = _instanceInitializers.close.call(this);
     }
 
     _createDecoratedClass(ModalHeader, [{
@@ -26,14 +27,20 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
       },
       enumerable: true
     }, {
-      key: 'closeModal',
-      value: function closeModal() {
-        console.log(this.modal);
-      }
+      key: 'close',
+      decorators: [_aureliaFramework.bindable],
+      initializer: function () {
+        return closeModal;
+      },
+      enumerable: true
     }], null, _instanceInitializers);
 
     return ModalHeader;
   })();
 
   exports.ModalHeader = ModalHeader;
+
+  function closeModal() {
+    console.log('not overridden');
+  }
 });

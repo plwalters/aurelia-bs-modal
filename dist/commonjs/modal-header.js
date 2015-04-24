@@ -17,6 +17,7 @@ var ModalHeader = (function () {
     _classCallCheck(this, ModalHeader);
 
     this.title = _instanceInitializers.title.call(this);
+    this.close = _instanceInitializers.close.call(this);
   }
 
   _createDecoratedClass(ModalHeader, [{
@@ -27,13 +28,19 @@ var ModalHeader = (function () {
     },
     enumerable: true
   }, {
-    key: 'closeModal',
-    value: function closeModal() {
-      console.log(this.modal);
-    }
+    key: 'close',
+    decorators: [_bindable.bindable],
+    initializer: function () {
+      return closeModal;
+    },
+    enumerable: true
   }], null, _instanceInitializers);
 
   return ModalHeader;
 })();
 
 exports.ModalHeader = ModalHeader;
+
+function closeModal() {
+  console.log('not overridden');
+}

@@ -1,8 +1,8 @@
 System.register(['aurelia-framework'], function (_export) {
-  var bindable, _classCallCheck, _createDecoratedClass, ModalHeader;
+  var bindable, _classCallCheck, _createDecoratedClass, AuButton;
 
-  function closeModal() {
-    console.log('not overridden');
+  function defaultClick() {
+    console.log('Forgot to override your button click');
   }
   return {
     setters: [function (_aureliaFramework) {
@@ -15,36 +15,36 @@ System.register(['aurelia-framework'], function (_export) {
 
       _createDecoratedClass = (function () { function defineProperties(target, descriptors, initializers) { for (var i = 0; i < descriptors.length; i++) { var descriptor = descriptors[i]; var decorators = descriptor.decorators; var key = descriptor.key; delete descriptor.key; delete descriptor.decorators; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor || descriptor.initializer) descriptor.writable = true; if (decorators) { for (var f = 0; f < decorators.length; f++) { var decorator = decorators[f]; if (typeof decorator === 'function') { descriptor = decorator(target, key, descriptor) || descriptor; } else { throw new TypeError('The decorator for method ' + descriptor.key + ' is of the invalid type ' + typeof decorator); } } if (initializers) initializers[key] = descriptor.initializer; } Object.defineProperty(target, key, descriptor); } } return function (Constructor, protoProps, staticProps, protoInitializers, staticInitializers) { if (protoProps) defineProperties(Constructor.prototype, protoProps, protoInitializers); if (staticProps) defineProperties(Constructor, staticProps, staticInitializers); return Constructor; }; })();
 
-      ModalHeader = (function () {
+      AuButton = (function () {
         var _instanceInitializers = {};
 
-        function ModalHeader() {
-          _classCallCheck(this, ModalHeader);
+        function AuButton() {
+          _classCallCheck(this, AuButton);
 
-          this.title = _instanceInitializers.title.call(this);
-          this.close = _instanceInitializers.close.call(this);
+          this.text = _instanceInitializers.text.call(this);
+          this.click = _instanceInitializers.click.call(this);
         }
 
-        _createDecoratedClass(ModalHeader, [{
-          key: 'title',
+        _createDecoratedClass(AuButton, [{
+          key: 'text',
           decorators: [bindable],
           initializer: function () {
             return '';
           },
           enumerable: true
         }, {
-          key: 'close',
+          key: 'click',
           decorators: [bindable],
           initializer: function () {
-            return closeModal;
+            return defaultClick;
           },
           enumerable: true
         }], null, _instanceInitializers);
 
-        return ModalHeader;
+        return AuButton;
       })();
 
-      _export('ModalHeader', ModalHeader);
+      _export('AuButton', AuButton);
     }
   };
 });

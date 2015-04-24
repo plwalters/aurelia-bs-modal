@@ -1,7 +1,5 @@
-define(['exports', 'aurelia-framework', 'jquery'], function (exports, _aureliaFramework, _jquery) {
+define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
   'use strict';
-
-  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj['default'] : obj; };
 
   var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
 
@@ -11,48 +9,38 @@ define(['exports', 'aurelia-framework', 'jquery'], function (exports, _aureliaFr
     value: true
   });
 
-  var _$ = _interopRequire(_jquery);
-
-  var Modal = (function () {
+  var AuButton = (function () {
     var _instanceInitializers = {};
 
-    function Modal(element) {
-      _classCallCheck(this, _Modal);
+    function AuButton() {
+      _classCallCheck(this, AuButton);
 
-      this.showing = _instanceInitializers.showing.call(this);
-
-      this.element = element;
+      this.text = _instanceInitializers.text.call(this);
+      this.click = _instanceInitializers.click.call(this);
     }
 
-    var _Modal = Modal;
-
-    _createDecoratedClass(_Modal, [{
-      key: 'showing',
+    _createDecoratedClass(AuButton, [{
+      key: 'text',
       decorators: [_aureliaFramework.bindable],
       initializer: function () {
-        return false;
+        return '';
       },
       enumerable: true
     }, {
-      key: 'attached',
-      value: function attached() {
-        _$(this.modal).modal({ show: false });
-      }
-    }, {
-      key: 'showingChanged',
-      value: function showingChanged(newValue) {
-        if (newValue) {
-          _$(this.modal).modal('show');
-        } else {
-          _$(this.modal).modal('hide');
-        }
-      }
+      key: 'click',
+      decorators: [_aureliaFramework.bindable],
+      initializer: function () {
+        return defaultClick;
+      },
+      enumerable: true
     }], null, _instanceInitializers);
 
-    Modal = _aureliaFramework.inject(Element)(Modal) || Modal;
-    Modal = _aureliaFramework.customElement('modal')(Modal) || Modal;
-    return Modal;
+    return AuButton;
   })();
 
-  exports.Modal = Modal;
+  exports.AuButton = AuButton;
+
+  function defaultClick() {
+    console.log('Forgot to override your button click');
+  }
 });
