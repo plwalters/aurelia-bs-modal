@@ -31,16 +31,18 @@ This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a 
   }
   ```
 4. Anywhere in your app add the following markup as a sample -
+
   ```html
-    <modal showing.bind="showing">
-      <modal-header title="Name Goes Here" close.call="closeEventGoesHere()"></modal-header>
-      <modal-body content="view-model-name-goes-here"></modal-body>
-      <modal-footer>
-        <button class="btn" click.trigger="someFunctionGoesHere()">Save</button>
-        <au-button text="Cancel" click.call="someFunctionGoesHere()"></au-button>
-      </modal-footer>
-    </modal>
+  <modal showing.bind="showing">
+    <modal-header title="Name Goes Here" close.call="closeEventGoesHere()"></modal-header>
+    <modal-body content="view-model-name-goes-here"></modal-body>
+    <modal-footer>
+      <button class="btn" click.trigger="someFunctionGoesHere()">Save</button>
+      <au-button text="Cancel" click.call="someFunctionGoesHere()"></au-button>
+    </modal-footer>
+  </modal>
   ```
+
 5. Update the bindings to be events in the view model that backs whereever you added the sample -
   ```javascript
   export class MyViewModel{
