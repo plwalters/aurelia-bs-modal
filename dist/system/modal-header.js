@@ -2,7 +2,7 @@ System.register(['aurelia-framework'], function (_export) {
   var bindable, _classCallCheck, _createDecoratedClass, ModalHeader;
 
   function closeModal() {
-    console.log('not overridden');
+    console.log('Please bind a function to close modal - "<modal-header close.call="myFunc()"></modal-header>');
   }
   return {
     setters: [function (_aureliaFramework) {

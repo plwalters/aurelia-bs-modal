@@ -41,6 +41,6 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
   exports.ModalHeader = ModalHeader;
 
   function closeModal() {
-    console.log('not overridden');
+    console.log('Please bind a function to close modal - "<modal-header close.call="myFunc()"></modal-header>');
   }
 });

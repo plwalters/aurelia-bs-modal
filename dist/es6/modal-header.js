@@ -5,5 +5,5 @@ export class ModalHeader {
   @bindable close = closeModal;
 }
 function closeModal(){
-  console.log('not overridden');
+  console.log('Please bind a function to close modal - "<modal-header close.call="myFunc()"></modal-header>');
 }

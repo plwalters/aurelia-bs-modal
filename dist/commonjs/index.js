@@ -10,5 +10,5 @@ function install(aurelia) {
   aurelia.globalizeResources('./modal-header');
   aurelia.globalizeResources('./modal-body');
   aurelia.globalizeResources('./modal-footer');
-  aurelia.globalizeResources('./modal-button');
+  aurelia.globalizeResources('./au-button');
 }

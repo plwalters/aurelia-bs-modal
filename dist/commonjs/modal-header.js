@@ -42,5 +42,5 @@ var ModalHeader = (function () {
 exports.ModalHeader = ModalHeader;
 
 function closeModal() {
-  console.log('not overridden');
+  console.log('Please bind a function to close modal - "<modal-header close.call="myFunc()"></modal-header>');
 }
