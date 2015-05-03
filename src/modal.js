@@ -4,4 +4,5 @@ import {inject, customElement, bindable} from 'aurelia-framework';
 @inject(Element)
 export class Modal {
   @bindable showing = false;
+  @bindable modal_id = '';
 }
