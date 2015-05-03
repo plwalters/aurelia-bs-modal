@@ -36,7 +36,7 @@ var Modal = (function () {
     key: 'modal_id',
     decorators: [_inject$customElement$bindable.bindable],
     initializer: function () {
-      return '';
+      return 'au-modal';
     },
     enumerable: true
   }], null, _instanceInitializers);

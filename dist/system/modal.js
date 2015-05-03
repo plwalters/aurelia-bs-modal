@@ -40,7 +40,7 @@ System.register(['aurelia-framework'], function (_export) {
           key: 'modal_id',
           decorators: [bindable],
           initializer: function () {
-            return '';
+            return 'au-modal';
           },
           enumerable: true
         }], null, _instanceInitializers);

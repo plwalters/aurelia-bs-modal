@@ -35,7 +35,7 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
       key: 'modal_id',
       decorators: [_aureliaFramework.bindable],
       initializer: function () {
-        return '';
+        return 'au-modal';
       },
       enumerable: true
     }], null, _instanceInitializers);
