@@ -2,7 +2,7 @@
 
 This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a wrapper for the Bootstrap modal.
 
-> To keep up to date on [Aurelia](http://www.aurelia.io/), please visit and subscribe to [the official blog](http://blog.durandal.io/). If you have questions, we invite you to join us on [![Join the chat at https://gitter.im/aurelia/discuss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aurelia/discuss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge).
+> To keep up to date on [Aurelia](http://www.aurelia.io/), please visit and subscribe to [the official blog](http://blog.durandal.io/). If you have questions, we invite you to join us on [![Join the chat at https://gitter.im/aurelia/discuss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aurelia/discuss?utmco_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge).
 
 ## How to install this plugin?
 
@@ -35,7 +35,7 @@ This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a 
   ```html
   <modal showing.bind="showing">
     <modal-header title="Name Goes Here" close.call="closeEventGoesHere()"></modal-header>
-    <modal-body content="view-model-name-goes-here"></modal-body>
+    <modal-body content_view.bind="view-model-name-goes-here" content_model.bind="model-name-goes-here"></modal-body>
     <modal-footer>
       <button class="btn" click.trigger="someFunctionGoesHere()">Save</button>
       <au-button text="Cancel" click.call="someFunctionGoesHere()"></au-button>
@@ -72,7 +72,8 @@ This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a 
 
   ### Setting content
 
-  Right now you can set the `content` property directly with the view-model name as shown in the example.  This will be a one-time setting of the property and lets the modal know which view-model / view you want to render.
+  Right now you can set the `content_view` property directly with the view-model name as shown in the example.  This will be a one-time setting of the property and lets the modal know which view-model / view you want to render.
+  You can also set the `content_model` property with the object that you want to act as the model to get data from to populate your view-model.
 
   ### Binding to content
 
@@ -88,5 +89,8 @@ This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a 
   }
   ```
   ```html
-  <modal-body content.bind="modalContent"></modal-body>
+  <modal-body content_view.bind="modalContent"></modal-body>
   ```
+
+  This same process can be done with the content_model property.
+  
