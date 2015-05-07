@@ -9,7 +9,7 @@ This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a 
 1. In your project install the plugin via `jspm` with following command
 
   ```shell
-  jspm install github:pwkad/aurelia-bs-modal
+  jspm install aurelia-bs-modal
   ```
 2. Make sure you use [manual bootstrapping](http://aurelia.io/docs#startup-and-configuration). In order to do so open your `index.html` and locate the element with the attribute aurelia-app. Change it to look like this:
 
