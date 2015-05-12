@@ -8,14 +8,4 @@ export class Modal {
   constructor(element) {
     this.element = element;
   }
-  attached(){
-    $(this.modal).modal({show: false});
-  }
-  showingChanged(newValue){
-    if (newValue) {
-      $(this.modal).modal('show')
-    } else {
-      $(this.modal).modal('hide')
-    }
-  }
 }

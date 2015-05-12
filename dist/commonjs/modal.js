@@ -38,20 +38,6 @@ var Modal = (function () {
       return false;
     },
     enumerable: true
-  }, {
-    key: 'attached',
-    value: function attached() {
-      _jquery2['default'](this.modal).modal({ show: false });
-    }
-  }, {
-    key: 'showingChanged',
-    value: function showingChanged(newValue) {
-      if (newValue) {
-        _jquery2['default'](this.modal).modal('show');
-      } else {
-        _jquery2['default'](this.modal).modal('hide');
-      }
-    }
   }], null, _instanceInitializers);
 
   Modal = _aureliaFramework.inject(Element)(Modal) || Modal;

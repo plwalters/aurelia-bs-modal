@@ -6,7 +6,7 @@
     "aurelia",
     "plugin",
     "modal",
-    "bootstrap"
+    "pure-css"
   ],
   "homepage": "http://aurelia.io",
   "bugs": {
@@ -37,5 +37,23 @@
   },
   "devDependencies": {
     "gulp-babel": "^5.1.0"
+  },
+  "aureliatoolkit": {
+    "themes": [
+      {
+        "name": "bootstrap",
+        "options": [],
+        "version": "0.0.1",
+        "link": "github:pwkad/aurelia-bs-modal@bootstrap",
+        "settings": []
+      },
+      {
+        "name": "pure-css",
+        "options": [],
+        "version": "0.0.1",
+        "link": "github:pwkad/aurelia-bs-modal@pure-css",
+        "settings": []
+      }
+    ]
   }
 }

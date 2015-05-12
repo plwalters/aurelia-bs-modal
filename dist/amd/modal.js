@@ -35,20 +35,6 @@ define(['exports', 'aurelia-framework', 'jquery'], function (exports, _aureliaFr
         return false;
       },
       enumerable: true
-    }, {
-      key: 'attached',
-      value: function attached() {
-        _$(this.modal).modal({ show: false });
-      }
-    }, {
-      key: 'showingChanged',
-      value: function showingChanged(newValue) {
-        if (newValue) {
-          _$(this.modal).modal('show');
-        } else {
-          _$(this.modal).modal('hide');
-        }
-      }
     }], null, _instanceInitializers);
 
     Modal = _aureliaFramework.inject(Element)(Modal) || Modal;

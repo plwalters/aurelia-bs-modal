@@ -38,20 +38,6 @@ System.register(['aurelia-framework', 'jquery'], function (_export) {
             return false;
           },
           enumerable: true
-        }, {
-          key: 'attached',
-          value: function attached() {
-            $(this.modal).modal({ show: false });
-          }
-        }, {
-          key: 'showingChanged',
-          value: function showingChanged(newValue) {
-            if (newValue) {
-              $(this.modal).modal('show');
-            } else {
-              $(this.modal).modal('hide');
-            }
-          }
         }], null, _instanceInitializers);
 
         Modal = inject(Element)(Modal) || Modal;
