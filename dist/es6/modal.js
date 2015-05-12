@@ -1,5 +1,5 @@
 import {inject, customElement, bindable} from 'aurelia-framework';
-import $ from 'jquery';
+import '../styles/pure-css/styles.css!';
 
 @customElement('modal')
 @inject(Element)
