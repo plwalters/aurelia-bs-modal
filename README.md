@@ -90,3 +90,9 @@ This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a 
   ```html
   <modal-body content.bind="modalContent"></modal-body>
   ```
+
+## Cool links
+Here are a few samples of the modal in action - 
+
+Here is a single modal and a wizard -
+https://github.com/PWKad/aurelia-samples/tree/master/src/modal
