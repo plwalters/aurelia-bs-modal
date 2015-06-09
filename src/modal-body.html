@@ -1,10 +1,8 @@
 <template>
   <div class="modal-body">
     <compose view-model.bind="content"></compose>
-    <!--
-      You could have also used <content select="*"></content> to include you hard-coded HTML
-      Or perhaps <content select=".my-div"></content> to include your own div with CSS class 'my-div'
-      It is purely a CSS selector
-    -->
+    
+    <!-- or use the content tag with any CSS selector -->
+    <content select=".my-div"></content> 
   </div>
 </template>
