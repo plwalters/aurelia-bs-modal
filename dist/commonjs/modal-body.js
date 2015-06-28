@@ -18,11 +18,18 @@ var ModalBody = (function () {
   function ModalBody() {
     _classCallCheck(this, ModalBody);
 
-    _defineDecoratedPropertyDescriptor(this, 'content', _instanceInitializers);
+    _defineDecoratedPropertyDescriptor(this, 'content_view', _instanceInitializers);
+
+    _defineDecoratedPropertyDescriptor(this, 'content_model', _instanceInitializers);
   }
 
   _createDecoratedClass(ModalBody, [{
-    key: 'content',
+    key: 'content_view',
+    decorators: [_aureliaFramework.bindable],
+    initializer: null,
+    enumerable: true
+  }, {
+    key: 'content_model',
     decorators: [_aureliaFramework.bindable],
     initializer: null,
     enumerable: true
