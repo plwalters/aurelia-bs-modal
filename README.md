@@ -35,7 +35,7 @@ This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a 
   ```html
   <modal showing.bind="showing">
     <modal-header title="Name Goes Here" close.call="closeEventGoesHere()"></modal-header>
-    <modal-body content_view.bind="view-model-name-goes-here" content_model.bind="model-name-goes-here"></modal-body>
+    <modal-body content-view.bind="view-model-name-goes-here" content-model.bind="model-name-goes-here"></modal-body>
     <modal-footer>
       <button class="btn" click.trigger="someFunctionGoesHere()">Save</button>
       <au-button text="Cancel" click.call="someFunctionGoesHere()"></au-button>
@@ -72,9 +72,9 @@ This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a 
 
   ### Setting content
 
-  Right now you can set the `content_view` property directly with the view-model name as shown in the example.  This will be a one-time setting of the property and lets the modal know which view-model / view you want to render.
-  You can also (optionally) set the `content_model` property with the object that you want to act as the model to get data from to populate your view-model.
-  
+  Right now you can set the `content-view` property directly with the view-model name as shown in the example.  This will be a one-time setting of the property and lets the modal know which view-model / view you want to render.
+  You can also (optionally) set the `content-model` property with the object that you want to act as the model to get data from to populate your view-model.
+
   ### Binding to content
 
   We can just as easily bind to that property to change the view-model mid-flight.  A good example of this would be when using a wizard and going through steps.  Ex -
@@ -89,11 +89,11 @@ This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a 
   }
   ```
   ```html
-  <modal-body content_view.bind="modalContent"></modal-body>
+  <modal-body content-view.bind="modalContent"></modal-body>
   ```
 
 ## Cool links
-Here are a few samples of the modal in action - 
+Here are a few samples of the modal in action -
 
 Here is a single modal and a wizard -
 https://github.com/PWKad/aurelia-samples/tree/master/src/modal
