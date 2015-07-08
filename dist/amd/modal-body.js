@@ -17,18 +17,18 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
     function ModalBody() {
       _classCallCheck(this, ModalBody);
 
-      _defineDecoratedPropertyDescriptor(this, 'content_view', _instanceInitializers);
+      _defineDecoratedPropertyDescriptor(this, 'contentView', _instanceInitializers);
 
-      _defineDecoratedPropertyDescriptor(this, 'content_model', _instanceInitializers);
+      _defineDecoratedPropertyDescriptor(this, 'contentModel', _instanceInitializers);
     }
 
     _createDecoratedClass(ModalBody, [{
-      key: 'content_view',
+      key: 'contentView',
       decorators: [_aureliaFramework.bindable],
       initializer: null,
       enumerable: true
     }, {
-      key: 'content_model',
+      key: 'contentModel',
       decorators: [_aureliaFramework.bindable],
       initializer: null,
       enumerable: true
