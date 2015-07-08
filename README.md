@@ -43,6 +43,8 @@ This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a 
   </modal>
   ```
 
+(Note that when You don't want to close button in modal-header, then use `close.bind="false"` instead of `close.call="closeEventGoesHere()"` in modal-header)
+
 5. Update the bindings to be events in the view model that backs whereever you added the sample -
   ```javascript
   export class MyViewModel{
