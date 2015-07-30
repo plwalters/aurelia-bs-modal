@@ -35,7 +35,7 @@ This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a 
   ```html
   <modal showing.bind="showing">
     <modal-header title="Name Goes Here" close.call="closeEventGoesHere()"></modal-header>
-    <modal-body content-view.bind="view-model-name-goes-here" content-model.bind="model-name-goes-here"></modal-body>
+    <modal-body content-view="view-model-path-goes-here" content-model.bind="model-name-goes-here"></modal-body>
     <modal-footer>
       <button class="btn" click.trigger="someFunctionGoesHere()">Save</button>
       <au-button text="Cancel" click.call="someFunctionGoesHere()"></au-button>
