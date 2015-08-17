@@ -41,7 +41,13 @@ System.register(['aurelia-framework', 'jquery'], function (_export) {
         }, {
           key: 'attached',
           value: function attached() {
-            $(this.modal).modal({ show: false });
+            var _this = this;
+
+            $(this.modal).modal({ show: false }).on('show.bs.modal', function () {
+              _this.showing = true;
+            }).on('hide.bs.modal', function () {
+              _this.showing = false;
+            });
           }
         }, {
           key: 'showingChanged',

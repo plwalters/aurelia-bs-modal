@@ -41,7 +41,13 @@ var Modal = (function () {
   }, {
     key: 'attached',
     value: function attached() {
-      _jquery2['default'](this.modal).modal({ show: false });
+      var _this = this;
+
+      _jquery2['default'](this.modal).modal({ show: false }).on('show.bs.modal', function () {
+        _this.showing = true;
+      }).on('hide.bs.modal', function () {
+        _this.showing = false;
+      });
     }
   }, {
     key: 'showingChanged',

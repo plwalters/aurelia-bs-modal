@@ -1,12 +1,12 @@
 System.register([], function (_export) {
   _export('configure', configure);
 
-  function configure(aurelia) {
-    aurelia.globalizeResources('./modal');
-    aurelia.globalizeResources('./modal-header');
-    aurelia.globalizeResources('./modal-body');
-    aurelia.globalizeResources('./modal-footer');
-    aurelia.globalizeResources('./au-button');
+  function configure(config) {
+    config.globalResources('./modal');
+    config.globalResources('./modal-header');
+    config.globalResources('./modal-body');
+    config.globalResources('./modal-footer');
+    config.globalResources('./au-button');
   }
 
   return {

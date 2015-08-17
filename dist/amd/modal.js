@@ -38,7 +38,13 @@ define(['exports', 'aurelia-framework', 'jquery'], function (exports, _aureliaFr
     }, {
       key: 'attached',
       value: function attached() {
-        _$(this.modal).modal({ show: false });
+        var _this = this;
+
+        _$(this.modal).modal({ show: false }).on('show.bs.modal', function () {
+          _this.showing = true;
+        }).on('hide.bs.modal', function () {
+          _this.showing = false;
+        });
       }
     }, {
       key: 'showingChanged',
