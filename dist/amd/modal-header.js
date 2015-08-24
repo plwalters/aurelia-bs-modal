@@ -9,7 +9,7 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-  function _defineDecoratedPropertyDescriptor(target, key, descriptors) { var _descriptor = descriptors[key]; if (!_descriptor) return; var descriptor = {}; for (var _key in _descriptor) descriptor[_key] = _descriptor[_key]; descriptor.value = descriptor.initializer.call(target); Object.defineProperty(target, key, descriptor); }
+  function _defineDecoratedPropertyDescriptor(target, key, descriptors) { var _descriptor = descriptors[key]; if (!_descriptor) return; var descriptor = {}; for (var _key in _descriptor) descriptor[_key] = _descriptor[_key]; descriptor.value = descriptor.initializer ? descriptor.initializer.call(target) : undefined; Object.defineProperty(target, key, descriptor); }
 
   var ModalHeader = (function () {
     var _instanceInitializers = {};
@@ -25,14 +25,14 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
     _createDecoratedClass(ModalHeader, [{
       key: 'title',
       decorators: [_aureliaFramework.bindable],
-      initializer: function () {
+      initializer: function initializer() {
         return '';
       },
       enumerable: true
     }, {
       key: 'close',
       decorators: [_aureliaFramework.bindable],
-      initializer: function () {
+      initializer: function initializer() {
         return closeModal;
       },
       enumerable: true

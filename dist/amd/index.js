@@ -7,10 +7,10 @@ define(['exports'], function (exports) {
   exports.configure = configure;
 
   function configure(config) {
-    config.globalResources('./modal');
-    config.globalResources('./modal-header');
-    config.globalResources('./modal-body');
-    config.globalResources('./modal-footer');
-    config.globalResources('./au-button');
+    config.globalizeResources('./modal');
+    config.globalizeResources('./modal-header');
+    config.globalizeResources('./modal-body');
+    config.globalizeResources('./modal-footer');
+    config.globalizeResources('./au-button');
   }
 });
