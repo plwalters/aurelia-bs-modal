@@ -10,7 +10,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-function _defineDecoratedPropertyDescriptor(target, key, descriptors) { var _descriptor = descriptors[key]; if (!_descriptor) return; var descriptor = {}; for (var _key in _descriptor) descriptor[_key] = _descriptor[_key]; descriptor.value = descriptor.initializer.call(target); Object.defineProperty(target, key, descriptor); }
+function _defineDecoratedPropertyDescriptor(target, key, descriptors) { var _descriptor = descriptors[key]; if (!_descriptor) return; var descriptor = {}; for (var _key in _descriptor) descriptor[_key] = _descriptor[_key]; descriptor.value = descriptor.initializer ? descriptor.initializer.call(target) : undefined; Object.defineProperty(target, key, descriptor); }
 
 var _aureliaFramework = require('aurelia-framework');
 
@@ -20,6 +20,16 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var Modal = (function () {
   var _instanceInitializers = {};
+  var _instanceInitializers = {};
+
+  _createDecoratedClass(Modal, [{
+    key: 'showing',
+    decorators: [_aureliaFramework.bindable],
+    initializer: function initializer() {
+      return false;
+    },
+    enumerable: true
+  }], null, _instanceInitializers);
 
   function Modal(element) {
     _classCallCheck(this, _Modal);
@@ -29,21 +39,12 @@ var Modal = (function () {
     this.element = element;
   }
 
-  var _Modal = Modal;
-
-  _createDecoratedClass(_Modal, [{
-    key: 'showing',
-    decorators: [_aureliaFramework.bindable],
-    initializer: function () {
-      return false;
-    },
-    enumerable: true
-  }, {
+  _createDecoratedClass(Modal, [{
     key: 'attached',
     value: function attached() {
       var _this = this;
 
-      _jquery2['default'](this.modal).modal({ show: false }).on('show.bs.modal', function () {
+      (0, _jquery2['default'])(this.modal).modal({ show: false }).on('show.bs.modal', function () {
         _this.showing = true;
       }).on('hide.bs.modal', function () {
         _this.showing = false;
@@ -53,15 +54,16 @@ var Modal = (function () {
     key: 'showingChanged',
     value: function showingChanged(newValue) {
       if (newValue) {
-        _jquery2['default'](this.modal).modal('show');
+        (0, _jquery2['default'])(this.modal).modal('show');
       } else {
-        _jquery2['default'](this.modal).modal('hide');
+        (0, _jquery2['default'])(this.modal).modal('hide');
       }
     }
   }], null, _instanceInitializers);
 
-  Modal = _aureliaFramework.inject(Element)(Modal) || Modal;
-  Modal = _aureliaFramework.customElement('modal')(Modal) || Modal;
+  var _Modal = Modal;
+  Modal = (0, _aureliaFramework.inject)(Element)(Modal) || Modal;
+  Modal = (0, _aureliaFramework.customElement)('modal')(Modal) || Modal;
   return Modal;
 })();
 
