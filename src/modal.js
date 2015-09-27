@@ -9,7 +9,7 @@ export class Modal {
     this.element = element;
   }
   attached(){
-    $(this.modal).modal({show: false})
+    $(this.element).modal({show: false})
     .on('show.bs.modal', () => {	
       this.showing = true;
     })
@@ -19,9 +19,9 @@ export class Modal {
   }
   showingChanged(newValue){
     if (newValue) {
-      $(this.modal).modal('show')
+      $(this.element).modal('show')
     } else {
-      $(this.modal).modal('hide')
+      $(this.element).modal('hide')
     }
   }
 }
