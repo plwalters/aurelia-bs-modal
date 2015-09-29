@@ -40,7 +40,7 @@ define(['exports', 'aurelia-framework', 'jquery'], function (exports, _aureliaFr
       value: function attached() {
         var _this = this;
 
-        _$(this.modal).modal({ show: false }).on('show.bs.modal', function () {
+        _$(this.modal).modal({ show: _this.showing }).on('show.bs.modal', function () {
           _this.showing = true;
         }).on('hide.bs.modal', function () {
           _this.showing = false;
@@ -49,6 +49,7 @@ define(['exports', 'aurelia-framework', 'jquery'], function (exports, _aureliaFr
     }, {
       key: 'showingChanged',
       value: function showingChanged(newValue) {
+        if (!this.modal) { return; }
         if (newValue) {
           _$(this.modal).modal('show');
         } else {

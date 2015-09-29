@@ -9,15 +9,16 @@ export class Modal {
     this.element = element;
   }
   attached(){
-    $(this.modal).modal({show: false})
-    .on('show.bs.modal', () => {	
+    $(this.modal).modal({show: this.showing})
+    .on('show.bs.modal', () => {
       this.showing = true;
     })
-    .on('hide.bs.modal', () => {	
+    .on('hide.bs.modal', () => {
       this.showing = false;
     });
   }
   showingChanged(newValue){
+    if (!this.modal) { return; }
     if (newValue) {
       $(this.modal).modal('show')
     } else {

@@ -43,7 +43,7 @@ System.register(['aurelia-framework', 'jquery'], function (_export) {
           value: function attached() {
             var _this = this;
 
-            $(this.modal).modal({ show: false }).on('show.bs.modal', function () {
+            $(this.modal).modal({ show: _this.modal }).on('show.bs.modal', function () {
               _this.showing = true;
             }).on('hide.bs.modal', function () {
               _this.showing = false;
@@ -52,6 +52,7 @@ System.register(['aurelia-framework', 'jquery'], function (_export) {
         }, {
           key: 'showingChanged',
           value: function showingChanged(newValue) {
+            if (!this.modal) { return; }
             if (newValue) {
               $(this.modal).modal('show');
             } else {
