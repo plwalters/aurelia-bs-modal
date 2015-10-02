@@ -33,7 +33,7 @@ This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a 
 4. Anywhere in your app add the following markup as a sample -
 
   ```html
-  <modal showing.bind="showing">
+  <modal showing.bind="showing" large="true" small="true">
     <modal-header title="Name Goes Here" close.call="closeEventGoesHere()"></modal-header>
     <modal-body content-view="view-model-path-goes-here" content-model.bind="model-name-goes-here"></modal-body>
     <modal-footer>
@@ -44,6 +44,8 @@ This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a 
   ```
 
 (Note that when You don't want to close button in modal-header, then use `close.bind="false"` instead of `close.call="closeEventGoesHere()"` in modal-header)
+
+(Also note that you can't have both the large attribute and the small attribute. If both are present the modal will get the default size)
 
 5. Update the bindings to be events in the view model that backs whereever you added the sample -
   ```javascript
