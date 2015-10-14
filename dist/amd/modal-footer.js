@@ -23,7 +23,7 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
     _createDecoratedClass(ModalFooter, [{
       key: 'buttons',
       decorators: [_aureliaFramework.bindable],
-      initializer: function () {
+      initializer: function initializer() {
         return [];
       },
       enumerable: true

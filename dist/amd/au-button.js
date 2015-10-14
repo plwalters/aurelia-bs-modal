@@ -25,14 +25,14 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
     _createDecoratedClass(AuButton, [{
       key: 'text',
       decorators: [_aureliaFramework.bindable],
-      initializer: function () {
+      initializer: function initializer() {
         return '';
       },
       enumerable: true
     }, {
       key: 'click',
       decorators: [_aureliaFramework.bindable],
-      initializer: function () {
+      initializer: function initializer() {
         return defaultClick;
       },
       enumerable: true

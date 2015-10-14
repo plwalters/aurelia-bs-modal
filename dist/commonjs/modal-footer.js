@@ -24,7 +24,7 @@ var ModalFooter = (function () {
   _createDecoratedClass(ModalFooter, [{
     key: 'buttons',
     decorators: [_aureliaFramework.bindable],
-    initializer: function () {
+    initializer: function initializer() {
       return [];
     },
     enumerable: true

@@ -14,9 +14,9 @@ function _defineDecoratedPropertyDescriptor(target, key, descriptors) { var _des
 
 var _aureliaFramework = require('aurelia-framework');
 
-var _jquery = require('jquery');
+var _bootstrap = require('bootstrap');
 
-var _jquery2 = _interopRequireDefault(_jquery);
+var _bootstrap2 = _interopRequireDefault(_bootstrap);
 
 var Modal = (function () {
   var _instanceInitializers = {};
@@ -32,18 +32,11 @@ var Modal = (function () {
   var _Modal = Modal;
 
   _createDecoratedClass(_Modal, [{
-    key: 'showing',
-    decorators: [_aureliaFramework.bindable],
-    initializer: function () {
-      return false;
-    },
-    enumerable: true
-  }, {
     key: 'attached',
     value: function attached() {
       var _this = this;
 
-      _jquery2['default'](this.modal).modal({ show: false }).on('show.bs.modal', function () {
+      (0, _bootstrap2['default'])(this.modal).modal({ show: false }).on('show.bs.modal', function () {
         _this.showing = true;
       }).on('hide.bs.modal', function () {
         _this.showing = false;
@@ -53,15 +46,22 @@ var Modal = (function () {
     key: 'showingChanged',
     value: function showingChanged(newValue) {
       if (newValue) {
-        _jquery2['default'](this.modal).modal('show');
+        (0, _bootstrap2['default'])(this.modal).modal('show');
       } else {
-        _jquery2['default'](this.modal).modal('hide');
+        (0, _bootstrap2['default'])(this.modal).modal('hide');
       }
     }
+  }, {
+    key: 'showing',
+    decorators: [_aureliaFramework.bindable],
+    initializer: function initializer() {
+      return false;
+    },
+    enumerable: true
   }], null, _instanceInitializers);
 
-  Modal = _aureliaFramework.inject(Element)(Modal) || Modal;
-  Modal = _aureliaFramework.customElement('modal')(Modal) || Modal;
+  Modal = (0, _aureliaFramework.inject)(Element)(Modal) || Modal;
+  Modal = (0, _aureliaFramework.customElement)('modal')(Modal) || Modal;
   return Modal;
 })();
 

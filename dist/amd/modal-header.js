@@ -25,14 +25,14 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
     _createDecoratedClass(ModalHeader, [{
       key: 'title',
       decorators: [_aureliaFramework.bindable],
-      initializer: function () {
+      initializer: function initializer() {
         return '';
       },
       enumerable: true
     }, {
       key: 'close',
       decorators: [_aureliaFramework.bindable],
-      initializer: function () {
+      initializer: function initializer() {
         return closeModal;
       },
       enumerable: true

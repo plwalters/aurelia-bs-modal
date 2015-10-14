@@ -1,4 +1,6 @@
-System.register(['aurelia-framework', 'jquery'], function (_export) {
+System.register(['aurelia-framework', 'bootstrap'], function (_export) {
+  'use strict';
+
   var inject, customElement, bindable, $, Modal;
 
   var _createDecoratedClass = (function () { function defineProperties(target, descriptors, initializers) { for (var i = 0; i < descriptors.length; i++) { var descriptor = descriptors[i]; var decorators = descriptor.decorators; var key = descriptor.key; delete descriptor.key; delete descriptor.decorators; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor || descriptor.initializer) descriptor.writable = true; if (decorators) { for (var f = 0; f < decorators.length; f++) { var decorator = decorators[f]; if (typeof decorator === 'function') { descriptor = decorator(target, key, descriptor) || descriptor; } else { throw new TypeError('The decorator for method ' + descriptor.key + ' is of the invalid type ' + typeof decorator); } } if (descriptor.initializer !== undefined) { initializers[key] = descriptor; continue; } } Object.defineProperty(target, key, descriptor); } } return function (Constructor, protoProps, staticProps, protoInitializers, staticInitializers) { if (protoProps) defineProperties(Constructor.prototype, protoProps, protoInitializers); if (staticProps) defineProperties(Constructor, staticProps, staticInitializers); return Constructor; }; })();
@@ -12,12 +14,10 @@ System.register(['aurelia-framework', 'jquery'], function (_export) {
       inject = _aureliaFramework.inject;
       customElement = _aureliaFramework.customElement;
       bindable = _aureliaFramework.bindable;
-    }, function (_jquery) {
-      $ = _jquery['default'];
+    }, function (_bootstrap) {
+      $ = _bootstrap['default'];
     }],
     execute: function () {
-      'use strict';
-
       Modal = (function () {
         var _instanceInitializers = {};
 
@@ -32,13 +32,6 @@ System.register(['aurelia-framework', 'jquery'], function (_export) {
         var _Modal = Modal;
 
         _createDecoratedClass(_Modal, [{
-          key: 'showing',
-          decorators: [bindable],
-          initializer: function () {
-            return false;
-          },
-          enumerable: true
-        }, {
           key: 'attached',
           value: function attached() {
             var _this = this;
@@ -58,6 +51,13 @@ System.register(['aurelia-framework', 'jquery'], function (_export) {
               $(this.modal).modal('hide');
             }
           }
+        }, {
+          key: 'showing',
+          decorators: [bindable],
+          initializer: function initializer() {
+            return false;
+          },
+          enumerable: true
         }], null, _instanceInitializers);
 
         Modal = inject(Element)(Modal) || Modal;
