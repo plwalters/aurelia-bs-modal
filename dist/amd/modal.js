@@ -23,6 +23,10 @@ define(['exports', 'aurelia-framework', 'bootstrap'], function (exports, _aureli
 
       _defineDecoratedPropertyDescriptor(this, 'showing', _instanceInitializers);
 
+      _defineDecoratedPropertyDescriptor(this, 'escapeCallback', _instanceInitializers);
+
+      this.keydownHandler = null;
+
       this.element = element;
     }
 
@@ -38,14 +42,46 @@ define(['exports', 'aurelia-framework', 'bootstrap'], function (exports, _aureli
         }).on('hide.bs.modal', function () {
           _this.showing = false;
         });
+        if (this.showing) {
+          this.addEscHandler();
+        }
+      }
+    }, {
+      key: 'detached',
+      value: function detached() {
+        this.removeEscHandler();
       }
     }, {
       key: 'showingChanged',
       value: function showingChanged(newValue) {
         if (newValue) {
+          this.addEscHandler();
           (0, _$['default'])(this.modal).modal('show');
         } else {
           (0, _$['default'])(this.modal).modal('hide');
+          this.removeEscHandler();
+        }
+      }
+    }, {
+      key: 'addEscHandler',
+      value: function addEscHandler() {
+        var _this2 = this;
+
+        if (this.escapeCallback && !this.keydownHandler) {
+          this.keydownHandler = function (e) {
+            if (e.which == 27) {
+              _this2.escapeCallback();
+            }
+          };
+          (0, _$['default'])(this.modal).on('keydown.dismiss.bs.modal', this.keydownHandler);
+        }
+      }
+    }, {
+      key: 'removeEscHandler',
+      value: function removeEscHandler() {
+        if (this.keydownHandler) {
+          (0, _$['default'])(this.modal).off('keydown.dismiss.bs.modal', this.escapeCallback);
+          this.keydownHandler = null;
         }
       }
     }, {
@@ -54,6 +90,11 @@ define(['exports', 'aurelia-framework', 'bootstrap'], function (exports, _aureli
       initializer: function initializer() {
         return false;
       },
+      enumerable: true
+    }, {
+      key: 'escapeCallback',
+      decorators: [_aureliaFramework.bindable],
+      initializer: null,
       enumerable: true
     }], null, _instanceInitializers);
 
