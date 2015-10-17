@@ -44,6 +44,7 @@ define(['exports', 'aurelia-framework', 'bootstrap'], function (exports, _aureli
         });
         if (this.showing) {
           this.addEscHandler();
+          this.ensureFocus();
         }
       }
     }, {
@@ -57,6 +58,7 @@ define(['exports', 'aurelia-framework', 'bootstrap'], function (exports, _aureli
         if (newValue) {
           this.addEscHandler();
           (0, _$['default'])(this.modal).modal('show');
+          this.ensureFocus();
         } else {
           (0, _$['default'])(this.modal).modal('hide');
           this.removeEscHandler();
@@ -82,6 +84,18 @@ define(['exports', 'aurelia-framework', 'bootstrap'], function (exports, _aureli
         if (this.keydownHandler) {
           (0, _$['default'])(this.modal).off('keydown.dismiss.bs.modal', this.escapeCallback);
           this.keydownHandler = null;
+        }
+      }
+    }, {
+      key: 'ensureFocus',
+      value: function ensureFocus() {
+        var _this3 = this;
+
+        var $focused = (0, _$['default'])(':focus');
+        if ((0, _$['default'])($focused).closest(this.element).length !== 1) {
+          setTimeout(function () {
+            (0, _$['default'])(_this3.element).find('input, textarea, select, datalist, keygen, button').eq(0).focus();
+          }, 500);
         }
       }
     }, {

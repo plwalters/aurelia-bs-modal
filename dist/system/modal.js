@@ -47,6 +47,7 @@ System.register(['aurelia-framework', 'bootstrap'], function (_export) {
             });
             if (this.showing) {
               this.addEscHandler();
+              this.ensureFocus();
             }
           }
         }, {
@@ -60,6 +61,7 @@ System.register(['aurelia-framework', 'bootstrap'], function (_export) {
             if (newValue) {
               this.addEscHandler();
               $(this.modal).modal('show');
+              this.ensureFocus();
             } else {
               $(this.modal).modal('hide');
               this.removeEscHandler();
@@ -85,6 +87,18 @@ System.register(['aurelia-framework', 'bootstrap'], function (_export) {
             if (this.keydownHandler) {
               $(this.modal).off('keydown.dismiss.bs.modal', this.escapeCallback);
               this.keydownHandler = null;
+            }
+          }
+        }, {
+          key: 'ensureFocus',
+          value: function ensureFocus() {
+            var _this3 = this;
+
+            var $focused = $(':focus');
+            if ($($focused).closest(this.element).length !== 1) {
+              setTimeout(function () {
+                $(_this3.element).find('input, textarea, select, datalist, keygen, button').eq(0).focus();
+              }, 500);
             }
           }
         }, {

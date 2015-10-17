@@ -47,6 +47,7 @@ var Modal = (function () {
       });
       if (this.showing) {
         this.addEscHandler();
+        this.ensureFocus();
       }
     }
   }, {
@@ -60,6 +61,7 @@ var Modal = (function () {
       if (newValue) {
         this.addEscHandler();
         (0, _bootstrap2['default'])(this.modal).modal('show');
+        this.ensureFocus();
       } else {
         (0, _bootstrap2['default'])(this.modal).modal('hide');
         this.removeEscHandler();
@@ -85,6 +87,18 @@ var Modal = (function () {
       if (this.keydownHandler) {
         (0, _bootstrap2['default'])(this.modal).off('keydown.dismiss.bs.modal', this.escapeCallback);
         this.keydownHandler = null;
+      }
+    }
+  }, {
+    key: 'ensureFocus',
+    value: function ensureFocus() {
+      var _this3 = this;
+
+      var $focused = (0, _bootstrap2['default'])(':focus');
+      if ((0, _bootstrap2['default'])($focused).closest(this.element).length !== 1) {
+        setTimeout(function () {
+          (0, _bootstrap2['default'])(_this3.element).find('input, textarea, select, datalist, keygen, button').eq(0).focus();
+        }, 500);
       }
     }
   }, {
