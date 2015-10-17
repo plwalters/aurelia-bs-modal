@@ -46,6 +46,7 @@
     "gulp-jshint": "^1.11.2",
     "jshint-stylish": "^2.0.1",
     "karma": "^0.13.10",
+    "object.assign": "^4.0.1",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.4",
     "vinyl-paths": "^2.0.0",

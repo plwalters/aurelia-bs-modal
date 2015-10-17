@@ -26,14 +26,14 @@ var AuButton = (function () {
   _createDecoratedClass(AuButton, [{
     key: 'text',
     decorators: [_aureliaFramework.bindable],
-    initializer: function () {
+    initializer: function initializer() {
       return '';
     },
     enumerable: true
   }, {
     key: 'click',
     decorators: [_aureliaFramework.bindable],
-    initializer: function () {
+    initializer: function initializer() {
       return defaultClick;
     },
     enumerable: true
