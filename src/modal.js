@@ -22,6 +22,7 @@ export class Modal {
     });
     if(this.showing) {
       this.addEscHandler();
+      this.ensureFocus();
     }
   }
 
@@ -33,6 +34,7 @@ export class Modal {
     if (newValue) {
       this.addEscHandler();
       $(this.modal).modal('show')
+      this.ensureFocus();
     } else {
       $(this.modal).modal('hide')
       this.removeEscHandler();
@@ -56,4 +58,15 @@ export class Modal {
       this.keydownHandler = null;
     }
   }
+
+  ensureFocus() {
+    var $focused = $(':focus');
+    if($($focused).closest(this.element).length !== 1) {
+      // focus is not on this modal, set focus to first standard html form element, that could get focus
+      setTimeout(() => {
+        $(this.element).find("input, textarea, select, datalist, keygen, button").eq(0).focus();
+      }, 500);
+    }
+  }
+
 }
