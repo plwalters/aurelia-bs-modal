@@ -1,3 +1,5 @@
+DEPRECATED - please use https://github.com/aurelia/dialog instead for modals.
+
 # aurelia-bs-modal
 
 This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It sets up a wrapper for the Bootstrap modal.
